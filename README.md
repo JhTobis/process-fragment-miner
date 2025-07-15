@@ -5,15 +5,15 @@ This directory contains scripts for processing and mining process fragments as s
 ## Files
 
 process_fragment_miner/
-├── miner.py                      # ProcessFragmentMiner class
-├── scorer_factory.py             # ScorerFactory class
-├── scorer.py                     # Scorer classes (optionally user-defined)
-├── fragment_selector.py          # DP + beam logic
-├── subtrace_extractor.py         # Top-K DFS subtrace extraction
-├── utils.py                      # Minor helpers (RAM usage, bitmask ops)
+├── miner.py                # ProcessFragmentMiner class
+├── scorer_factory.py       # ScorerFactory class
+├── scorer.py               # Scorer classes (optionally user-defined)
+├── fragment_selector.py    # DP + beam logic
+├── subtrace_extractor.py   # Top-K DFS subtrace extraction
+├── utils.py                # Minor helpers (RAM usage, bitmask ops)
 ├── adapters/
-│   └── pm4py_adapter.py          # pm4py import + dependency graph
-│   └── word2vec_adapter.py.      # Word2Vec adapter for SimilarityScorer
+│   ├── pm4py_adapter.py    # pm4py import + dependency graph
+│   └── word2vec_adapter.py # Word2Vec adapter for SimilarityScorer
 
 ## Usage
 
