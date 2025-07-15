@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Tobis
+    given-names: Joern
+title: "ProcessFragmentMiner"
+version: "0.1.0"
+date-released: 2025-07-15
+license: AGPL-3.0
+contact:
+  email: joern.tobis@tum.de
