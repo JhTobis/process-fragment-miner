@@ -5,8 +5,9 @@ build/
 dist/
 wheels/
 *.egg-info
-data/
+# data/
 # Virtual environments
 .venv
 
+uv.lock
 .DS_Store

@@ -132,13 +132,16 @@ def get_best_disjoint_subset(
     """
     bitmasked = _convert_to_bitmasked(subtraces)
 
-    if method == "dp":
+    if method == "dp" or method == "auto":
         result = _dp_solver(bitmasked, score_agg, alpha, return_details, max_memory_mb)
         if result is not None:
-            return result
+            return result + (("dp",) if return_details else ())
+        elif method == "dp":
+            raise RuntimeError("DP solver failed due to memory constraints.")
+        
         print("⚠️  Memory exceeded. Switching to beam search.")
 
     if method == "beam" or method == "auto":
-        return _beam_solver(bitmasked, score_agg, alpha, beam_size, return_details)
+        return _beam_solver(bitmasked, score_agg, alpha, beam_size, return_details) + (("beam",) if return_details else ())
 
     raise ValueError(f"Invalid method: {method}. Choose from 'dp', 'beam', or 'auto'.")
