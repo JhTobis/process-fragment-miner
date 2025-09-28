@@ -6,6 +6,7 @@ from .scorer import (
     SimilarityScorer
 )
 from .scorer_factory import ScorerFactory
+from .test import evaluation
 
 __all__ = [
     "ProcessFragmentMiner",
@@ -13,5 +14,6 @@ __all__ = [
     "BigramScorer",
     "DependencyScorer",
     "SimilarityScorer",
-    "ScorerFactory"
+    "ScorerFactory",
+    "evaluation"
 ]

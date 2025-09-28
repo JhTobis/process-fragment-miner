@@ -111,7 +111,7 @@ class ProcessFragmentMiner:
         )
 
         if return_details:
-            score, best_traces, trace_scores = result
+            score, best_traces, trace_scores, method_used = result
         else:
             score, best_traces = result
             trace_scores = None
@@ -122,7 +122,7 @@ class ProcessFragmentMiner:
             fragments = best_traces
 
         if return_details:
-            return score, fragments, trace_scores
+            return score, fragments, trace_scores, method_used
         else:
             return score, fragments
         

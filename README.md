@@ -10,10 +10,12 @@ process_fragment_miner/
 ├── scorer.py               # Scorer classes (optionally user-defined)
 ├── fragment_selector.py    # DP + beam logic
 ├── subtrace_extractor.py   # Top-K DFS subtrace extraction
-├── utils.py                # Minor helpers (RAM usage, bitmask ops)
+├── utils.py                # Mostly pm4py wrapper
 ├── adapters/
 │   ├── pm4py_adapter.py    # pm4py import + dependency graph
 │   └── word2vec_adapter.py # Word2Vec adapter for SimilarityScorer
+├── test.py                 # Evaluation
+├── __init__.py             # Package initialization
 ```
 ## Usage
 
@@ -21,13 +23,17 @@ Import the required classes or functions in your scripts:
 
 ```python
 from miner import FragmentMiner
-from utils import some_utility_function
 ```
 
 ## Requirements
 
 - Python 3.11
-- See [pyproject.toml](pyproject.toml)for dependencies.
+- See [pyproject.toml](pyproject.toml) for dependencies.
+- [uv](https://github.com/astral-sh/uv) (for dependency management)
+- Install dependencies with:
+  ```sh
+  uv sync
+  ```
 
 ## License
 
