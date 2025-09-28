@@ -6,7 +6,7 @@ import os
 
 from process_fragment_miner.utils import export_xes_by_fragments, get_fragments_by_labels_from_log, import_xes
 
-def evaluation(logs_dir, export_path, path_filtering=False):
+def evaluation(logs_dir, export_path, path_filtering=False, dk_fragments=None):
     if os.path.isfile(logs_dir):
         filenames = [os.path.basename(logs_dir)]
         logs_dir = os.path.dirname(logs_dir)
@@ -22,7 +22,8 @@ def evaluation(logs_dir, export_path, path_filtering=False):
             parameters={"attribute_key": "concept:name", "positive": False},
             values=['START', 'END']
         )
-        dk_fragments = get_fragments_by_labels_from_log(event_log)
+        if dk_fragments == None:
+            dk_fragments = get_fragments_by_labels_from_log(event_log)
         for fm in ['dk','dependency','bigram','similarity']:
             if fm == "dk":
                 fragments = dk_fragments

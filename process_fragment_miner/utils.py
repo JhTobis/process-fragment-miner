@@ -303,7 +303,8 @@ def pm4py_all_fragments(event_log, fragments, fragment_end=True, quality_measure
         root_log = merge_event_logs_by_trace_id(root_log,start_end_log)
 
 
-    process_tree,fragment_log,fragment_mapping = pm4py_bpmn_heuristic_miner(root_log,list(get_activities(root_log)),threshold_bpmn=root_process_threshold_bpmn, return_pt=True, plot=plot_root, relabel_fragments=True)
+    process_tree,root_log,fragment_mapping = pm4py_bpmn_heuristic_miner(root_log,list(get_activities(root_log)),threshold_bpmn=root_process_threshold_bpmn, return_pt=True, plot=plot_root, relabel_fragments=True)
+
     if quality_measures:
         root_model_qm = calculate_metrics(process_tree,root_log)
         mean_qm = calculate_quality_measures_means(fragments_properties)
